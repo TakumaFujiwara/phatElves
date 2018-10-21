@@ -39,8 +39,8 @@ public class driver {
 			//auto code is the key to my account
 			dbase.getBase_map().put(source_account.getVerification_code(), source_account);
 			String send_to_droid = source_account.getVerification_code().toString();
-			System.out.println(send_to_droid);
-			sending to android app
+			//System.out.println(send_to_droid);
+			//sending to android app
 		    
 			
 			
@@ -129,14 +129,16 @@ public class driver {
 				while(googleString.equals("Deposit")) {
 					//GH asks how much to add
 					//convert that data to Integer
-					Integer add_money = 50;
+					
+					System.out.println("How much would you like to deposit?");
+					Integer add_money = kb.nextInt();
 					unlocked_account.addIn(add_money);
 					unlocked_account.setAccountAdd(add_money);
 					unlocked_account.showAddStatement();
 					
 					//GH asks if they want to add more
 					//if so, continue
-					System.out.println("Would you like to despot more? (Yes/No)");
+					System.out.println("Would you like to deposit more? (Yes/No)");
 					String more = kb.nextLine();
 					
 					if(more.equals("Yes"))
@@ -147,7 +149,8 @@ public class driver {
 				
 				while(googleString.equals("Withdraw")) {
 					//GH asks how much to subtract
-					Integer take_money = 50;
+					System.out.println("How much would you like to deposit?");
+					Integer take_money = kb.nextInt();
 					unlocked_account.takeOut(take_money);
 					unlocked_account.setAccountTake(take_money);
 					unlocked_account.showTakeStatement();
@@ -166,7 +169,7 @@ public class driver {
 				while(googleString.equals("Stop Hunger")) {
 					unlocked_account.mealsToSave();
 					
-					System.out.println("Would you like donate to Feeding America or another organization"
+					System.out.println("Would you like to donate to Feeding America or another organization"
 							+ "to help prevent world hunger? (Yes/No)");
 					String more = kb.nextLine();
 					
@@ -186,13 +189,15 @@ public class driver {
 					else if(more.equals("No"))
 						break;
 				}
+				System.out.println("Please enter a name associated with Phat Elves Secure Banking");
+				return;
 				
 			}
+			
 			//jacob_test_account now has proper information linked
 			//break;
 		}
 		}
-
 	}
 	
 	private static void collect(String args) throws IOException {
@@ -258,7 +263,7 @@ public class driver {
 		while(true) {
 			
 			//GH what is your name
-			
+			System.out.println("Welcome to Phat Elves Secure ATM. Please enter your name to continue.");
 			//I receive name put it in String name bucket
 			String name = kb.nextLine();
 			
