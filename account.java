@@ -92,6 +92,9 @@ public class account {
 	}
 	
 	public void mealsToSave() {
+		Integer meals = getBalance()*10;
+		if(meals < 0)
+			meals = 0;
 		System.out.println("You provide 10 meals per dollar by donating to Feeding America. That means you "
 				+ "can provide up " + (getBalance()*10) + " meals to families in need!");
 	}
