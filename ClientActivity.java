@@ -53,10 +53,11 @@ public class ClientActivity extends Activity {
                 }
                 else if(!serverIpAddress.equals("")){
                     //serverIpAddress = "172.20.10.5;
-                    Thread clientThread = new Thread(new
-                            ClientThread());
-                    clientThread.start();
+                    serverIpAddress =serverIp.getText().toString();
                 }
+                Thread clientThread = new Thread(new
+                        ClientThread());
+                clientThread.start();
             }
         });
     }
@@ -107,7 +108,7 @@ public class ClientActivity extends Activity {
  setup i/p streams
  ******************************************/
                     //BufferedReader input =
-                           // new BufferedReader(new InputStreamReader(s.getInputStream()));
+                    // new BufferedReader(new InputStreamReader(s.getInputStream()));
                     DataInputStream in = new
                             DataInputStream(socket.getInputStream());
                     String line = null;
